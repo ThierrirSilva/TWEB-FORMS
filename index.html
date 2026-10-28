@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Inscrição nos jogos escolares</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Inscrição nos jogos escolares</h1>
+            <p>Preencha os campos abaixo com suas informações.</p>
+        </header>
+        <main>
+            <form id="inscricao-jogos" action="/inscricoes-jogos" method="post" enctype="multipart/form-data">
+                <div class="field-group">
+                    <div>
+                        <label for="equipe">Nome da equipe</label>
+                        <input type="text" id="equipe" name="equipe" value="Equipe Horizonte">
+                    </div>
+                </div>
+
+                <fieldset>
+                    <legend>Identificação do atleta</legend>
+                    <div class="field-group two-columns">
+                        <div>
+                            <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
+                            <input type="text" id="nome-atleta" name="nome_atleta" required>
+                        </div>
+                        <div>
+                            <label for="email-atleta">E-mail de contato (obrigatório)</label>
+                            <input type="email" id="email-atleta" name="email_atleta" required>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Participação nos jogos</legend>
+                    <div class="field-group">
+                        <p class="text-slate-600">Selecione as informações relevantes para sua participação.</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Turno de preferência</legend>
+                    <div class="options-row">
+                        <div class="option">
+                            <input type="radio" id="turno-manha" name="turno" value="manha">
+                            <label for="turno-manha">Manhã</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="turno-tarde" name="turno" value="tarde">
+                            <label for="turno-tarde">Tarde</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Modalidades de interesse</legend>
+                    <div class="options-row">
+                        <div class="option">
+                            <input type="checkbox" id="interesse-futsal" name="modalidades" value="futsal">
+                            <label for="interesse-futsal">Futsal</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="interesse-volei" name="modalidades" value="voleibol">
+                            <label for="interesse-volei">Voleibol</label>
+                        </div>
+                    </div>
+
+                    <div class="field-group" style="margin-top: 1rem;">
+                        <label for="modalidade-principal">Modalidade principal (obrigatória)</label>
+                        <select id="modalidade-principal" name="modalidade_principal" required>
+                            <option value="">Selecione uma modalidade</option>
+                            <optgroup label="Coletivas">
+                                <option value="futsal">Futsal</option>
+                                <option value="voleibol">Voleibol</option>
+                            </optgroup>
+                            <optgroup label="Individuais">
+                                <option value="atletismo">Atletismo</option>
+                                <option value="xadrez">Xadrez</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Escola de origem</legend>
+                    <div class="field-group">
+                        <label for="escola">Escola de origem</label>
+                        <input type="search" id="escola" name="escola" list="escolas">
+                        <datalist id="escolas">
+                            <option value="Escola Horizonte"></option>
+                            <option value="Escola Aurora"></option>
+                            <option value="Escola Caminhos"></option>
+                        </datalist>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Observações e Extra</legend>
+                    <div class="field-group">
+                        <div>
+                            <label for="observacoes">Observações para a organização</label>
+                            <textarea id="observacoes" name="observacoes" rows="5" cols="50"></textarea>
+                        </div>
+                        <div>
+                            <label for="acompanhantes">Quantidade de acompanhantes</label>
+                            <input type="number" id="acompanhantes" name="acompanhantes" value="2">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit" name="acao" value="inscrever">Confirmar inscrição</button>
+            </form>
+        </main>
+    </body>
+</html>
